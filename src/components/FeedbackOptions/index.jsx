@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './FeedbackOptions.module.css';
 
 export class FeedbackOptions extends Component {
   static propTypes = {
@@ -9,18 +10,21 @@ export class FeedbackOptions extends Component {
 
   handleClick = e => {
     const name = e.target.textContent.toLowerCase();
-
-    // this.props.onLeaveFeedback();
-
-    this.props.onClick(name);
+    this.props.onLeaveFeedback(name);
   };
 
   render() {
     return (
-      <div>
-        <button onClick={this.handleClick}>Good</button>
-        <button onClick={this.handleClick}>Neutral</button>
-        <button onClick={this.handleClick}>Bad</button>
+      <div className={styles.container}>
+        <button className={styles.btn} onClick={this.handleClick}>
+          Good
+        </button>
+        <button className={styles.btn} onClick={this.handleClick}>
+          Neutral
+        </button>
+        <button className={styles.btn} onClick={this.handleClick}>
+          Bad
+        </button>
       </div>
     );
   }

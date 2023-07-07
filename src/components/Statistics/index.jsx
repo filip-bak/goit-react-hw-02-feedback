@@ -12,7 +12,7 @@ export class Statistics extends Component {
 
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
-    console.log(this.props);
+
     return (
       <ul>
         <li>Good: {good}</li>
